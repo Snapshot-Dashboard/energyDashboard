@@ -14,7 +14,7 @@ async function run() {
   try {
     const database = client.db("oilGasData");
     const test = database.collection("test");
-    const doc = { name: "Paul Graham", note: "Is our fearless leader" };
+    const doc = { name: "Ryan Pags", note: "CTO" };
     const result = await test.insertOne(doc);
     console.log("A document was interest with the _id: ${result.insertedId}");
   } finally {
