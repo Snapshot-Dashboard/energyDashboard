@@ -3,7 +3,11 @@ require("dotenv").config();
 const fetch = (...args) =>
   import("node-fetch").then(({ default: fetch }) => fetch(...args));
 
-const url = "https://api.eia.gov/v2/petroleum?api_key=" + process.env.EIA_API;
+// api v1 - need to move to v2
+const url =
+  "http://api.eia.gov/series/?api_key=" +
+  process.env.EIA_API +
+  "&series_id=PET.WCRSTUS1.W";
 
 fetch(url)
   .then((response) => response.text())
